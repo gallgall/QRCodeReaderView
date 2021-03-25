@@ -177,6 +177,14 @@ public final class CameraManager {
     }
   }
 
+  public boolean getTorchEnabled() {
+    OpenCamera theCamera = openCamera;
+    if (theCamera != null) {
+      return configManager.getTorchState(theCamera.getCamera());
+    }
+    return false;
+  }
+
   public synchronized boolean isOpen() {
     return openCamera != null && openCamera.getCamera() != null;
   }

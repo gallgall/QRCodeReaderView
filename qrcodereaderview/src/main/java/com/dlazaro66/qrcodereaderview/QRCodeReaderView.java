@@ -178,6 +178,17 @@ public class QRCodeReaderView extends SurfaceView
     }
 
     /**
+     * Get Torch enabled/disabled.
+     * default value is false
+     */
+    public boolean getTorchEnabled() {
+        if (mCameraManager != null) {
+            return mCameraManager.getTorchEnabled();
+        }
+        return false;
+    }
+
+    /**
      * Allows user to specify the camera ID, rather than determine
      * it automatically based on available cameras and their orientation.
      *
